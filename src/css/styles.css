@@ -1,0 +1,112 @@
+* {
+    margin          : 0;
+    padding         : 0;
+    box-sizing      : border-box;
+    text-decoration : none;
+}
+
+html {
+    min-height : 100vh;
+    width      : 100%;
+    box-sizing : border-box;
+}
+
+body {
+    height          : 100%;
+    width           : 100%;
+    display         : flex;
+    align-items     : center;
+    justify-content : center;
+    background      : radial-gradient(70% 70%, #232323 6%, #141414 90%);
+}
+
+.knobs-container {
+    display         : flex;
+    align-items     : center;
+    justify-content : center;
+    padding         : 30px 20px;
+}
+.knobs-container > div {
+    margin: 0 30px;
+}
+
+.knob {
+    position    : relative;
+    display     : flex;
+    flex-shrink : 0;
+    cursor      : grab;
+}
+
+.knob.active {
+    cursor : grabbing;
+}
+
+.knob.active>* {
+    cursor : grabbing;
+}
+
+.knob .ticks {
+    position : absolute;
+}
+
+.knob .tick {
+    min-width   : 3px;
+    flex-shrink : 0;
+    position    : absolute;
+    background  : black;
+}
+
+.knob .tick.plain {
+    flex-shrink : 0;
+    position    : absolute;
+    background  : black;
+}
+
+.knob .tick.plain.active {
+    background : none;
+}
+
+.knob.outer {
+    border-radius : 50%;
+    border        : 1px solid #222;
+    border-bottom : 1px solid #222;
+      /* border-bottom    : 10px solid #222; */
+    background-image : radial-gradient(100% 70%, #232323 6%, #141414 90%);
+      /* background-image : radial-gradient(100% 70%, #666 6%, #333 90%); */
+    box-shadow : 0 5px 15px 2px black, 0 0 5px 3px black, 0 0 0 9px #1c1c1c;
+}
+
+.knob.inner {
+    border-radius : 50%;
+}
+
+.knob .marker {
+    position      : absolute;
+    width         : 6%;
+    bottom        : 2%;
+    left          : 50%;
+    transform     : translateX(-50%);
+    border-radius : 9999px;
+}
+
+.knob .marker.led {
+    height     : 6%;
+    background : #509eec;
+    box-shadow : 0 0 3px 1px black, 0 0 15px 1px #509eec, 0 0 0 1px #369;
+}
+
+.knob .marker.neon {
+    height     : 18%;
+    background : #509eec;
+    box-shadow : 0 0 3px 1px black, 0 0 15px 1px #509eec, 0 0 0 1px #369;
+}
+
+.knob .marker.dot {
+    height     : 6%;
+    background : #509eec;
+}
+
+.knob .marker.line {
+    height     : 18%;
+    background : #509eec;
+}
